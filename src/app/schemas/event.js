@@ -5,7 +5,7 @@ const EventSchema = new mongoose.Schema(
     event: {
       type: String,
       required: true,
-    }
+    },
   },
   { timestamps: true }
 );
