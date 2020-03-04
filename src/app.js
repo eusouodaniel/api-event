@@ -2,9 +2,10 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import 'express-async-errors';
-import path from 'path';
 import Youch from 'youch';
 import * as Sentry from '@sentry/node';
+import swaggerUi from 'swagger-ui-express';
+import swaggerJSDoc from 'swagger-jsdoc';
 import routes from './routes';
 import './database';
 import sentryConfig from './config/sentry';
@@ -16,6 +17,7 @@ class App {
 
     this.middlewares();
     this.routes();
+    this.swagger();
     this.exception();
   }
 
@@ -27,7 +29,25 @@ class App {
 
   routes() {
     this.server.use(routes);
+    this.server.use('/api/v1', routes);
     this.server.use(Sentry.Handlers.errorHandler());
+  }
+
+  swagger() {
+    const options = {
+      swaggerDefinition: {
+        info: {
+          title: 'api-event',
+          version: '1.0.0',
+          description: 'Api created to save events',
+        },
+        basePath: '/api/v1',
+      },
+      apis: ['./routes'],
+    };
+
+    const specs = swaggerJSDoc(options);
+    this.server.use('/', swaggerUi.serve, swaggerUi.setup(specs));
   }
 
   exception() {
