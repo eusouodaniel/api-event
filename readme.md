@@ -69,3 +69,4 @@ Commits pattern - Sufix:
 - FIX: Fix item already developed
 
 Use of pullrequests
+
