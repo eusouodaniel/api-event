@@ -21,7 +21,16 @@ class EventController {
 
     return res.json({
       responseCode: events ? 200 : 500,
-      response: events || 'Fails when search'
+      response: events || 'Fails when search',
+    });
+  }
+
+  async timeline(req, res) {
+    const events = await EventService.timeline(req.body);
+
+    return res.json({
+      responseCode: events ? 200 : 500,
+      response: events || 'Fails when search',
     });
   }
 }
