@@ -17,8 +17,11 @@ class EventController {
   }
 
   async find(req, res) {
+    const events = await EventService.find(req.body);
+
     return res.json({
-      responseCode: 200,
+      responseCode: events ? 200 : 500,
+      response: events || 'Fails when search'
     });
   }
 }
