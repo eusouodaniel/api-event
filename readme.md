@@ -57,3 +57,9 @@ Endpoints:
 - /events: POST - Store event
 - /events: GET - Get event
 - /event-timeline: GET - Build timeline
+
+Branchs:
+- master: Latest and updated code
+- dev: Developing resources
+
+Use of pullrequests
