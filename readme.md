@@ -41,7 +41,7 @@ Log error:
   
   
 
-Containerized application with Docker
+Containerized application with Docker and endpoints configured with jwt authentication, but commented on momentarily
 
 
 I got to configure the redis, but don't use it, and the swagger is still having a problem loading the endpoint
