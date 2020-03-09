@@ -23,7 +23,7 @@ api event
 - To access the container: docker exec -it <container_name> sh
 - The container name is something like: api-event
   
-
+* Container configured with alpine, as it is much lighter and consequently we have a performance gain
 
 If you don't have the docker configured, you can run it directly on the machine with these commands
 
