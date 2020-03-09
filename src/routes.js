@@ -62,4 +62,32 @@ routes.post('/events', EventController.store);
  */
 routes.get('/events', EventController.find);
 
+/**
+ *  @swagger
+ * /events:
+ *   post:
+ *     tags:
+ *     - "Get timeline-event"
+ *     summary: "Get timeline-event"
+ *     description: "Get timeline-event"
+ *     parameters:
+ *     - in: "body"
+ *       name: "body"
+ *       description: "Get timeline order by timeline"
+ *       required: true
+ *       schema:
+ *         type: "object"
+ *         properties:
+ *           event:
+ *              type: "string"
+ *     responses:
+ *       200:
+ *         description: "Successfully"
+ *       401:
+ *         description: "Unauthorized"
+ *       500:
+ *         description: "Ops... something wrong happened"
+ */
+routes.get('/event-timeline', EventController.timeline);
+
 export default routes;
