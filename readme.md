@@ -17,7 +17,6 @@ Environment:
 
   
 
- - List item
 
 If you don't have the docker configured, you can run it directly on the machine with these commands
 
