@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import EventController from './app/controllers/event-controller';
-import authMiddleware from './app/middlewares/auth';
+// import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
 
-routes.use(authMiddleware);
+// routes.use(authMiddleware);
 
 /**
  *  @swagger
