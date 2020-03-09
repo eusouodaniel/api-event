@@ -57,3 +57,15 @@ Endpoints:
 - /events: POST - Store event
 - /events: GET - Get event
 - /event-timeline: GET - Build timeline
+
+Branchs:
+- master: Latest and updated code
+- dev: Developing resources
+
+Commits pattern - Sufix: 
+- NEW: New item
+- FEA: New feature
+- UPDATE: Update item already developed
+- FIX: Fix item already developed
+
+Use of pullrequests
